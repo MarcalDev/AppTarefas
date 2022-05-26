@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F5F6FA"
+             x:Class="AppTarefas.Telas.Listar">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                
+                <Label Margin="20, 40, 0, 0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Segunda-feira" FontFamily="MontserratRegular" FontSize="20" TextColor="Black"/>
+                            <Span Text="&#13;&#10;"/>
+                            <Span Text="3 tarefas" FontFamily="MontserratThin" FontSize="14" TextColor="#888888"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+                
+                <Frame Grid.Column="1" HasShadow="False" Margin="10,20,20,0" BackgroundColor="#4043C9" CornerRadius="20">
+                    <Label TextColor="White" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="9" FontSize="20" FontFamily="MontserratMedium"/>
+                                <Span Text="&#13;&#10;"/>
+                                <Span Text="Fev" FontSize="14" FontFamily="MontserratLight"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+            </Grid>
+            
+
+            <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">                                  
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>                            
+                        </Grid.RowDefinitions>
+                    <Label Text="Tarefa 01">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BtnVisualizar"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Button Text="+" Clicked="BtnCadastrar" BackgroundColor="#4043C9" CornerRadius="50" FontSize="36" TextColor="White" VerticalOptions="End" TranslationY="-30" HorizontalOptions="End" WidthRequest="75" HeightRequest="75"/>
+                                        
+                    </Grid>                
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
