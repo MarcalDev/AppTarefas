@@ -21,5 +21,13 @@ namespace AppTarefas.Telas
         {
             Navigation.PopModalAsync();
         }
+
+        private void SalvarTarefa(object sender, EventArgs e)
+        {
+            // Pegar os dados da Tela e Criar uma Tarefa
+            // Salvar a Tarefa no Banco
+
+            
+        }
     }
 }

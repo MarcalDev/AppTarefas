@@ -55,7 +55,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition/>                            
                         </Grid.RowDefinitions>
-                    <Label Text="Tarefa 01">
+                    <Label Text="Tarefa 01" TextColor="Black">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="BtnVisualizar"/>
                         </Label.GestureRecognizers>

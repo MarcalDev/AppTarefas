@@ -23,11 +23,11 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <StackLayout Margin="10,0,10,30" Padding="20, 20, 0, 0" BackgroundColor="Yellow">
+                <StackLayout Margin="10,0,10,30" Padding="20, 20, 0, 0" >
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="BtnVoltar"/>
                     </StackLayout.GestureRecognizers>
-                    <Label Text="&#60;" />
+                    <Image Source="back.png"/>
                 </StackLayout>
                 
                 
@@ -38,15 +38,12 @@
 
 
             <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    
-
-                    
-
-                </Grid>
+                <StackLayout>
+                    <Label Text="03/03/2020" FontSize="16" FontFamily="MontserratRegular" TextColor="Black"/>
+                    <Label Text="8:00 - 8:30" FontSize="16" FontFamily="MontserratRegular" TextColor="#939393"/>
+                    <Label Text="Nota" TextColor="Black" FontSize="20" FontFamily="MontserratBold"/>
+                    <Label Text="Café santa clara - comprar 4 unidades se valor menor que 8 reais" FontSize="14" FontFamily="MontserratRegular" TextColor="Black"/>
+                </StackLayout>
             </Frame>
         </Grid>
     </ContentPage.Content>
