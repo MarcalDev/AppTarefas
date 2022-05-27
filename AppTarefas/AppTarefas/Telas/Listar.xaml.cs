@@ -106,9 +106,9 @@ namespace AppTarefas.Telas
 
                     if(tarefa != null)
                     {
-                        tarefa.Finalizado = e.Value;
                         // Salvar a alteração da propriedade finalizada no banco
                         await new TarefaDB().AtualizarAsync(tarefa);
+                        Tachado(label, tarefa.Finalizado);
                     }
                 }
                 
@@ -146,6 +146,17 @@ namespace AppTarefas.Telas
             DiaDaSemana.Text = PrimeiraLetraMaiuscula (idioma.DateTimeFormat.GetDayName(data.DayOfWeek));
         }
 
+        private void Tachado(Label label, bool finalizado)
+        {
+            if (finalizado)
+            {
+                label.TextDecorations = TextDecorations.Strikethrough;
+            }
+            else
+            {
+                label.TextDecorations = TextDecorations.None;
+            }
+        }
         private string PrimeiraLetraMaiuscula(string palavra)
         {
             return char.ToUpper(palavra[0]) + palavra.Substring(1);

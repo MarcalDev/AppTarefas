@@ -3,7 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#F5F6FA"
+             xmlns:conversor="clr-namespace:AppTarefas.Conversor"
              x:Class="AppTarefas.Telas.Listar">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conversor:TachadoConversor x:Key="Tachado"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.ColumnDefinitions>
@@ -28,9 +36,9 @@
                 <Label Margin="20, 40, 0, 0">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span x:Name="DiaDaSemana" Text="Segunda-feira" FontFamily="MontserratRegular" FontSize="20" TextColor="Black"/>
+                            <Span x:Name="DiaDaSemana" Text="-" FontFamily="MontserratRegular" FontSize="20" TextColor="Black"/>
                             <Span Text="&#13;&#10;"/>
-                            <Span x:Name="QuantidadeDeTarefas" Text="3" FontFamily="MontserratThin" FontSize="14" TextColor="#888888"/>
+                            <Span x:Name="QuantidadeDeTarefas" Text="-" FontFamily="MontserratThin" FontSize="14" TextColor="#888888"/>
                             <Span Text=" tarefas" FontFamily="MontserratThin" FontSize="14" TextColor="#888888"/>
                         </FormattedString>
                     </Label.FormattedText>
@@ -47,9 +55,9 @@
                         <Label TextColor="White" HorizontalTextAlignment="Center">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span x:Name="Dia" Text="9" FontSize="20" FontFamily="MontserratMedium"/>
+                                    <Span x:Name="Dia" Text="-" FontSize="20" FontFamily="MontserratMedium"/>
                                     <Span Text="&#13;&#10;"/>
-                                    <Span x:Name="Mes" Text="Fev" FontSize="14" FontFamily="MontserratLight"/>
+                                    <Span x:Name="Mes" Text="-" FontSize="14" FontFamily="MontserratLight"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -68,30 +76,30 @@
                     <CollectionView x:Name="CVListaDeTarefas" EmptyView="Nenhuma tarefa">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <SwipeView>
+                                <SwipeView BackgroundColor="White">
                                     <SwipeView.RightItems>
                                         <SwipeItems>
                                             <SwipeItem BackgroundColor="#EE6C4D" Text="Excluir" Invoked="BtnExcluir" CommandParameter="{Binding .}"/>
                                         </SwipeItems>
                                     </SwipeView.RightItems>
-                                    <Grid>
+                                    <Grid Padding="0, 10">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="1*"/>
                                             <ColumnDefinition Width="4*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox IsChecked="{Binding Finalizado}" CheckedChanged="CheckedChangeAction"/>
-                                        <Label x:Name="LblTarefaDetalhe" Grid.Column="1">
+                                        <CheckBox Color="#707070" IsChecked="{Binding Finalizado}" CheckedChanged="CheckedChangeAction"/>
+                                        <Label x:Name="LblTarefaDetalhe" TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Grid.Column="1" LineHeight="1.2">
                                             <Label.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="BtnVisualizar" CommandParameter="{Binding .}"/>
                                             </Label.GestureRecognizers>
                                             <Label.FormattedText>
                                                 <FormattedString>
-                                                    <Span Text="{Binding Nome}"/>
+                                                    <Span Text="{Binding Nome}" TextColor="Black" FontFamily="MontserratBold" FontSize="16"/>
                                                     <Span Text="&#10;"/>
-                                                    <Span Text="{Binding HorarioInicial}"/>
+                                                    <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" TextColor="#939393" FontFamily="MontserratLight" FontSize="12"/>
                                                     <Span Text=" - "/>
-                                                    <Span Text="{Binding HorarioFinal}"/>
+                                                    <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" TextColor="#939393" FontFamily="MontserratLight" FontSize="12"/>
                                                 </FormattedString>
                                             </Label.FormattedText>
                                         </Label>

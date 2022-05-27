@@ -22,6 +22,11 @@ namespace AppTarefas.Telas
         {
             InitializeComponent();
             BindingContext = tarefa;
+
+            if(tarefa.Nota == null || tarefa.Nota != null && tarefa.Nota.Length == 0)
+            {
+                LblTituloNota.IsVisible = false;
+            }
         }
 
         private void BtnVoltar(object sender, EventArgs e)

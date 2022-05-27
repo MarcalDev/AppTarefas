@@ -17,6 +17,7 @@ namespace AppTarefas.Telas
         public Cadastrar()
         {
             InitializeComponent();
+            LblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void FecharModal(object sender, EventArgs e)
@@ -37,17 +38,73 @@ namespace AppTarefas.Telas
 
 
             // Validação dos dados
+            if(await ValidacaoAsync(tarefa))
+            {
+                bool certo = await new TarefaDB().CadastrarAsync(tarefa);
 
-            bool certo = await new TarefaDB().CadastrarAsync(tarefa);
+                if (certo)
+                {
+                    // MessagingCenter Retornar a Tarefa para a tela de Listagem.
+                    MessagingCenter.Send<Listar, Tarefa>(new Listar(), "OnTarefaCadastrada", tarefa);
+                    // Fechar o modal
+                    await Navigation.PopModalAsync();
 
-            if (certo)
-            {                
-                // MessagingCenter Retornar a Tarefa para a tela de Listagem.
-                MessagingCenter.Send<Listar, Tarefa>(new Listar(), "OnTarefaCadastrada", tarefa);
-                // Fechar o modal
-                Navigation.PopModalAsync();                
-            }                                        
+                }
+            }
 
+                                            
+
+        }
+
+        private async Task<bool> ValidacaoAsync(Tarefa tarefa)
+        {
+
+            bool validacao = true;
+
+            if(tarefa.HorarioInicial > tarefa.HorarioFinal)
+            {
+                await DisplayAlert("Erro", "O horário inicial não pode ser maior que o horário final", "OK");
+                validacao = false;
+            }
+
+            if (tarefa.Nome == null)
+            {
+                await DisplayAlert("Erro", "O nome da tarefa precisa ser preenchido!", "OK");
+                validacao = false;
+            }
+
+            if(tarefa.Nome != null & tarefa.Nome.Length < 5)
+            {
+                await DisplayAlert("Erro", "O nome da tarefa precisa ter pelo menos 5 caracteres!", "OK");
+            }
+
+            return validacao;
+        }
+
+        private void Data_Unfocused(object sender, FocusEventArgs e)
+        {
+            LblData.Text = ((DatePicker)sender).Date.ToString("dd/MM/yyyy");
+        }
+
+        private void AcionarDatePicker(object sender, EventArgs e)
+        {
+            Data.Focus();
+        }
+
+        private void AcionarTimePicker(object sender, EventArgs e)
+        {
+            HorarioInicial.Focus();
+        }
+
+        private void HorarioInicial_Unfocused(object sender, FocusEventArgs e)
+        {
+            LblHorarioInicial.Text = ((TimePicker)sender).Time.ToString(@"hh\:mm");
+            HorarioFinal.Focus();
+        }
+
+        private void HorarioFinal_Unfocused(object sender, FocusEventArgs e)
+        {
+            LblHorarioFinal.Text = ((TimePicker)sender).Time.ToString(@"hh\:mm");
         }
         //private async Task<bool> ValidacaoAsync(Tarefa tarefa)
         //{
