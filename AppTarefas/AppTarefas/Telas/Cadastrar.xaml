@@ -34,7 +34,7 @@
                         </Frame.GestureRecognizers>
                         <StackLayout Orientation="Horizontal" Padding="15">
                             <DatePicker IsVisible="False" Unfocused="Data_Unfocused" x:Name="Data" BackgroundColor="White"/>
-                            <Label Text="Data" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" FontFamily="MontserratRegular" FontSize="16"  TextColor="Black"/>
+                            <Label Text="Data" Style="{StaticResource TituloCampo}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" />
                             <Label Text="" x:Name="LblData" VerticalTextAlignment="Center" FontFamily="MontserratLight" FontSize="16" TextColor="#888888"/>
                             <Image Source="{OnPlatform Android='calendar.png'}"/>
                         </StackLayout>
@@ -48,7 +48,7 @@
                         <StackLayout Orientation="Horizontal" Padding="15">
                             <TimePicker IsVisible="False" x:Name="HorarioInicial" Unfocused="HorarioInicial_Unfocused" BackgroundColor="White"/>
                             <TimePicker IsVisible="False" x:Name="HorarioFinal" Unfocused="HorarioFinal_Unfocused" BackgroundColor="White"/>
-                            <Label Text="Horário" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" FontFamily="MontserratRegular" FontSize="16" TextColor="Black"/>
+                            <Label Text="Horário" Style="{StaticResource TituloCampo}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" />
                             <Label VerticalTextAlignment="Center" FontFamily="MontserratLight" FontSize="16" TextColor="#888888">
                                 <Label.FormattedText>
                                     <FormattedString>
