@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppTarefas.Banco;
+using AppTarefas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,12 +24,34 @@ namespace AppTarefas.Telas
             Navigation.PopModalAsync();
         }
 
-        private void SalvarTarefa(object sender, EventArgs e)
+        private async void SalvarTarefa(object sender, EventArgs e)
         {
             // Pegar os dados da Tela e Criar uma Tarefa
-            // Salvar a Tarefa no Banco
+            Tarefa tarefa = new Tarefa();
+            tarefa.Nome = Nome.Text;
+            tarefa.Nota = Nota.Text;
+            tarefa.Data = Data.Date;
+            tarefa.HorarioInicial = HorarioInicial.Time;
+            tarefa.HorarioFinal = HorarioFinal.Time;
+            tarefa.Finalizado = false;
 
-            
+
+            // Validação dos dados
+
+            bool certo = await new TarefaDB().CadastrarAsync(tarefa);
+
+            if (certo)
+            {                
+                // MessagingCenter Retornar a Tarefa para a tela de Listagem.
+                MessagingCenter.Send<Listar, Tarefa>(new Listar(), "OnTarefaCadastrada", tarefa);
+                // Fechar o modal
+                Navigation.PopModalAsync();                
+            }                                        
+
         }
+        //private async Task<bool> ValidacaoAsync(Tarefa tarefa)
+        //{
+        //    bool validacao = true;
+        //}
     }
 }
