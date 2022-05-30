@@ -6,7 +6,7 @@
              x:Class="AppTarefas.Telas.Cadastrar">
     <ContentPage.Content>
         <ScrollView>
-            <Frame BackgroundColor="#F5F6FA" CornerRadius="10" Margin="30" HasShadow="false">
+            <Frame HasShadow="True"  BackgroundColor="#F5F6FA" CornerRadius="10" Margin="30">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" Margin="0, 0, 0, 20">
 
@@ -64,11 +64,11 @@
                     </Frame>
 
                     <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
-                        <Entry x:Name="Nome" Style="{StaticResource EntradaCampoEntry}" Placeholder="Tarefa"/>
+                        <Entry Visual="Material" x:Name="Nome" Style="{StaticResource EntradaCampoEntry}" Placeholder="Tarefa"/>
                     </Frame>
 
                     <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
-                        <Editor x:Name="Nota" Style="{StaticResource EntradaCampoEditor}" Placeholder="Nota" />
+                        <Editor Visual="Material" x:Name="Nota" Style="{StaticResource EntradaCampoEditor}" Placeholder="Nota" />
                     </Frame>
 
 

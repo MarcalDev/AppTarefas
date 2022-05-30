@@ -8,6 +8,12 @@
             <Color x:Key="Azul">#4043C9</Color>
             <Color x:Key="CinzaClaro">#939393</Color>
             <!-- Style Tela Cadastrar -->
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
+            
             <Style x:Key="BaseLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="TextColor" Value="Black"/>
@@ -71,6 +77,8 @@
             <!-- Style Visualizar-->
             <Style x:Key="TituloVisualizar" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                
             </Style>
 
         </ResourceDictionary>
