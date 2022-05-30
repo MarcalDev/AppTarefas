@@ -45,7 +45,7 @@
                 </Label>
 
 
-                <Frame Grid.Column="1" HasShadow="False" Margin="10,20,20,0" BackgroundColor="#4043C9" CornerRadius="20">
+                <Frame Grid.Column="1" HasShadow="False" Margin="10,20,20,0" BackgroundColor="{StaticResource Azul}" CornerRadius="20">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="AbrirCalendario"/>
                     </Frame.GestureRecognizers>
@@ -88,18 +88,18 @@
                                             <ColumnDefinition Width="4*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox Color="#707070" IsChecked="{Binding Finalizado}" CheckedChanged="CheckedChangeAction"/>
+                                        <CheckBox Color="{StaticResource Azul}" IsChecked="{Binding Finalizado}" CheckedChanged="CheckedChangeAction"/>
                                         <Label x:Name="LblTarefaDetalhe" TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Grid.Column="1" LineHeight="1.2">
                                             <Label.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="BtnVisualizar" CommandParameter="{Binding .}"/>
                                             </Label.GestureRecognizers>
                                             <Label.FormattedText>
                                                 <FormattedString>
-                                                    <Span Text="{Binding Nome}" TextColor="Black" FontFamily="MontserratBold" FontSize="16"/>
+                                                    <Span Text="{Binding Nome}" Style="{StaticResource TituloNomeTarefa}"/>
                                                     <Span Text="&#10;"/>
-                                                    <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" TextColor="#939393" FontFamily="MontserratLight" FontSize="12"/>
-                                                    <Span Text=" - "/>
-                                                    <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" TextColor="#939393" FontFamily="MontserratLight" FontSize="12"/>
+                                                    <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}"/>
+                                                    <Span Text=" - " Style="{StaticResource Horario}"/>
+                                                    <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}"/>
                                                 </FormattedString>
                                             </Label.FormattedText>
                                         </Label>
@@ -111,7 +111,7 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
-                    <Button Text="+" Clicked="BtnCadastrar" BackgroundColor="#4043C9" CornerRadius="50" FontSize="36" TextColor="White" VerticalOptions="End" TranslationY="-30" HorizontalOptions="End" WidthRequest="75" HeightRequest="75"/>
+                    <Button Text="+" Clicked="BtnCadastrar" Style="{StaticResource BotaoArredondado}"/>
 
                 </Grid>
             </Frame>

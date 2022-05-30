@@ -35,7 +35,7 @@
                         <StackLayout Orientation="Horizontal" Padding="15">
                             <DatePicker IsVisible="False" Unfocused="Data_Unfocused" x:Name="Data" BackgroundColor="White"/>
                             <Label Text="Data" Style="{StaticResource TituloCampo}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" />
-                            <Label Text="" x:Name="LblData" VerticalTextAlignment="Center" FontFamily="MontserratLight" FontSize="16" TextColor="#888888"/>
+                            <Label Text="" x:Name="LblData" VerticalTextAlignment="Center" Style="{StaticResource ValorCampo}"/>
                             <Image Source="{OnPlatform Android='calendar.png'}"/>
                         </StackLayout>
 
@@ -49,7 +49,7 @@
                             <TimePicker IsVisible="False" x:Name="HorarioInicial" Unfocused="HorarioInicial_Unfocused" BackgroundColor="White"/>
                             <TimePicker IsVisible="False" x:Name="HorarioFinal" Unfocused="HorarioFinal_Unfocused" BackgroundColor="White"/>
                             <Label Text="Horário" Style="{StaticResource TituloCampo}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" />
-                            <Label VerticalTextAlignment="Center" FontFamily="MontserratLight" FontSize="16" TextColor="#888888">
+                            <Label Style="{StaticResource ValorCampo}">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span x:Name="LblHorarioInicial" Text="Início"/>
@@ -64,17 +64,17 @@
                     </Frame>
 
                     <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
-                        <Entry x:Name="Nome" PlaceholderColor="Black" TextColor="#88888888" FontSize="16" FontFamily="MontserratRegular" Placeholder="Tarefa" BackgroundColor="White"/>
+                        <Entry x:Name="Nome" Style="{StaticResource EntradaCampoEntry}" Placeholder="Tarefa"/>
                     </Frame>
 
                     <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
-                        <Editor x:Name="Nota" PlaceholderColor="Black" TextColor="#88888888" FontSize="16" FontFamily="MontserratRegular" Placeholder="Nota" AutoSize="TextChanges" BackgroundColor="White"/>
+                        <Editor x:Name="Nota" Style="{StaticResource EntradaCampoEditor}" Placeholder="Nota" />
                     </Frame>
 
 
 
 
-                    <Button Text="Adicionar" Clicked="SalvarTarefa" Visual="Default" Padding="20, 10"  BackgroundColor="#4043C9" TextColor="White"  VerticalOptions="EndAndExpand" HorizontalOptions="End"/>
+                    <Button Text="Adicionar" Style="{StaticResource Botao}" Clicked="SalvarTarefa" />
                 </StackLayout>
             </Frame>
         </ScrollView>
