@@ -8,6 +8,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <conversor:TachadoConversor x:Key="Tachado"/>
+            <conversor:PrioridadeConversor x:Key="Prioridade"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -89,20 +90,30 @@
                                         </Grid.ColumnDefinitions>
 
                                         <CheckBox Color="{StaticResource Azul}" IsChecked="{Binding Finalizado}" CheckedChanged="CheckedChangeAction"/>
-                                        <Label x:Name="LblTarefaDetalhe" TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Grid.Column="1" LineHeight="1.2">
-                                            <Label.GestureRecognizers>
+                                        <StackLayout Grid.Column="1">
+                                            <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="BtnVisualizar" CommandParameter="{Binding .}"/>
-                                            </Label.GestureRecognizers>
-                                            <Label.FormattedText>
-                                                <FormattedString>
-                                                    <Span Text="{Binding Nome}" Style="{StaticResource TituloNomeTarefa}"/>
-                                                    <Span Text="&#10;"/>
-                                                    <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}"/>
-                                                    <Span Text=" - " Style="{StaticResource Horario}"/>
-                                                    <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}"/>
-                                                </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
+                                            </StackLayout.GestureRecognizers>
+                                            <Label TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Text="{Binding Nome}" Style="{StaticResource TituloNomeTarefa}"/>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Ellipse WidthRequest="15" HeightRequest="15" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}"/>
+                                                <Label TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Style="{StaticResource Horario}">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" />
+                                                            <Span Text=" - "/>
+                                                            <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </StackLayout>
+                                            
+                                            
+                                        </StackLayout>
+                                        <!--
+                                        <Label x:Name="LblTarefaDetalhe"  Grid.Column="1" LineHeight="1.2"/>
+                                        -->
                                     </Grid>
                                 </SwipeView>
 
