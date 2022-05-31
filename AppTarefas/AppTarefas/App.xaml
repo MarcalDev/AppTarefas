@@ -4,9 +4,14 @@
              x:Class="AppTarefas.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Cores-->
             <Color x:Key="Cinza">#888888</Color>
             <Color x:Key="Azul">#4043C9</Color>
             <Color x:Key="CinzaClaro">#939393</Color>
+
+            <Color x:Key="PrioridadeBaixa">#00ABFF</Color>
+            <Color x:Key="PrioridadeNormal">#E0E00C</Color>
+            <Color x:Key="PrioridadeAlta">#EF6969</Color>
             <!-- Style Tela Cadastrar -->
 
             <Style TargetType="Frame">

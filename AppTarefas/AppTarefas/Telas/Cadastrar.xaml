@@ -64,13 +64,19 @@
                     </Frame>
 
                     <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
-                        <Entry Visual="Material" x:Name="Nome" Style="{StaticResource EntradaCampoEntry}" Placeholder="Tarefa"/>
+                        <Entry x:Name="Nome" Visual="Material" Style="{StaticResource EntradaCampoEntry}" Placeholder="Tarefa"/>
                     </Frame>
 
                     <Frame Padding="0" CornerRadius="0" BorderColor="#EDEDED">
-                        <Editor Visual="Material" x:Name="Nota" Style="{StaticResource EntradaCampoEditor}" Placeholder="Nota" />
+                        <Editor x:Name="Nota" Visual="Material" Style="{StaticResource EntradaCampoEditor}" Placeholder="Nota" />
                     </Frame>
 
+                   <Grid ColumnDefinitions="*,*,*">
+                        <RadioButton x:Name="RBBaixa" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="0" TextColor="{StaticResource PrioridadeBaixa}" Content="Baixa"/>
+                        <RadioButton x:Name="RBNormal" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="1" TextColor="{StaticResource PrioridadeNormal}" Content="Normal"/>
+                        <RadioButton x:Name="RBAlta" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="2" TextColor="{StaticResource PrioridadeAlta}" Content="Alta"/>
+                                                
+                    </Grid>
 
 
 
