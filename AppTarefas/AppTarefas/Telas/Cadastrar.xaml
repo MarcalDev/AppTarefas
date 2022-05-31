@@ -72,9 +72,9 @@
                     </Frame>
 
                    <Grid ColumnDefinitions="*,*,*">
-                        <RadioButton x:Name="RBBaixa" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="0" TextColor="{StaticResource PrioridadeBaixa}" Content="Baixa"/>
-                        <RadioButton x:Name="RBNormal" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="1" TextColor="{StaticResource PrioridadeNormal}" Content="Normal"/>
-                        <RadioButton x:Name="RBAlta" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="2" TextColor="{StaticResource PrioridadeAlta}" Content="Alta"/>
+                        <RadioButton x:Name="RBBaixa" Style="{StaticResource RadioBotao}" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="0" TextColor="{StaticResource RBPrioridadeBaixa}" Content="Baixa"/>
+                        <RadioButton x:Name="RBNormal" Style="{StaticResource RadioBotao}" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="1" TextColor="{StaticResource RBPrioridadeNormal}" Content="Normal"/>
+                        <RadioButton x:Name="RBAlta"  Style="{StaticResource RadioBotao}" CheckedChanged="RBBaixa_CheckedChanged" Grid.Column="2" TextColor="{StaticResource RBPrioridadeAlta}" Content="Alta"/>
                                                 
                     </Grid>
 

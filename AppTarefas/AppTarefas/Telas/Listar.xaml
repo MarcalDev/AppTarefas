@@ -46,14 +46,14 @@
                 </Label>
 
 
-                <Frame Grid.Column="1" HasShadow="False" Margin="10,20,20,0" BackgroundColor="{StaticResource Azul}" CornerRadius="20">
+                <Frame Grid.Column="1" HasShadow="False" Margin="10,20,20,0" BackgroundColor="{StaticResource Azul}" CornerRadius="20" >
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="AbrirCalendario"/>
                     </Frame.GestureRecognizers>
                     
                     <StackLayout>
                         <DatePicker  x:Name="DPCalendario" DateSelected="DateSelectedAction"  IsVisible="False"/>
-                        <Label TextColor="White" HorizontalTextAlignment="Center">
+                        <Label TextColor="White" HorizontalTextAlignment="Center" >
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span x:Name="Dia" Text="-" FontSize="20" FontFamily="MontserratMedium"/>
@@ -97,7 +97,7 @@
                                             <Label TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Text="{Binding Nome}" Style="{StaticResource TituloNomeTarefa}"/>
 
                                             <StackLayout Orientation="Horizontal">
-                                                <Ellipse WidthRequest="15" HeightRequest="15" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}"/>
+                                                <Ellipse WidthRequest="15" HeightRequest="15" VerticalOptions="Center" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}"/>
                                                 <Label TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Style="{StaticResource Horario}">
                                                     <Label.FormattedText>
                                                         <FormattedString>

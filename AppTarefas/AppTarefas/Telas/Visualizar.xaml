@@ -6,8 +6,8 @@
               xmlns:conversor="clr-namespace:AppTarefas.Conversor"
              x:Class="AppTarefas.Telas.Visualizar">
     <ContentPage.Resources>
-        <ResourceDictionary>            
-            <conversor:PrioridadeConversor x:Key="Prioridade"/>
+        <ResourceDictionary>
+            <conversor:PrioridadeConversor x:Key="Prioridade" />
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -59,7 +59,7 @@
                     <Label x:Name="LblTituloNota" Text="Nota" Style="{StaticResource TituloVisualizar}"/>
                     <Label Text="{Binding Nota}" FontSize="14" Style="{StaticResource TituloCampo}"/>
                     <StackLayout Orientation="Horizontal">
-                        <Ellipse WidthRequest="15" HeightRequest="15" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}"/>
+                        <Ellipse WidthRequest="15" HeightRequest="15" VerticalOptions="Center" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}" />
                         <Label Text="{Binding Prioridade}"  Style="{StaticResource TituloCampo}"/>
                     </StackLayout>
                 </StackLayout>
