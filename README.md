@@ -1,4 +1,5 @@
 
+
 <h1 align="center"> APP TAREFAS</h1>
 
 <p align="center">
@@ -20,20 +21,21 @@ Construção de um aplicativo que auxilia na organização de tarefas pessoais, 
 
 ## 📱 Interfaces e funcionalidades
 ### Listagem de tarefas
-
-![ListagemTarefas](https://raw.githubusercontent.com/MarcalDev/AppTarefas/main/ArquivosREADME/ListagemTarefas.png | width=220)
+<img src="https://raw.githubusercontent.com/MarcalDev/AppTarefas/main/ArquivosREADME/ListagemTarefas.png?raw=true" width="220" height="437"/>
 
 ### Cadastro de tarefas
 
-![CadastroTarefa](https://github.com/MarcalDev/AppTarefas/blob/main/ArquivosREADME/CadastroTarefa.jpg?raw=true | width=220)
+<img src="https://github.com/MarcalDev/AppTarefas/blob/main/ArquivosREADME/CadastroTarefa.jpg?raw=true" width="220" height="437"/>
 
 ### Visualização de tarefas
+<img src="https://github.com/MarcalDev/AppTarefas/blob/main/ArquivosREADME/DetalhesTarefa.jpg?raw=true" width="220" height="437"/>
 
-![DetalhesTarefa](https://github.com/MarcalDev/AppTarefas/blob/main/ArquivosREADME/DetalhesTarefa.jpg?raw=true | width=220)
+
 
 ### Exclusão de tarefas
+<img src="https://github.com/MarcalDev/AppTarefas/blob/main/ArquivosREADME/ExclusaoTarefa.gif?raw=true" width="220" height="437"/>
 
-![ExclusaoTarefa](https://github.com/MarcalDev/AppTarefas/blob/main/ArquivosREADME/ExclusaoTarefa.gif?raw=true | width=220)
+
 
 
 ## 🛠️ Abrir e rodar o projeto
