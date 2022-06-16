@@ -90,14 +90,23 @@
             </Style>
             <Style x:Key="TituloNomeTarefa" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontFamily" Value="MontserratBold"/>
+                <Setter Property="TextDecorations" Value="None"/>
             </Style>
-            
+
+            <Style x:Key="TituloNomeTarefa2" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+                <Setter Property="FontFamily" Value="MontserratBold"/>
+                <Setter Property="TextDecorations" Value="Strikethrough"/>
+
+            </Style>
+
             <!-- Style Visualizar-->
             <Style x:Key="TituloVisualizar" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 
             </Style>
+
+           
 
         </ResourceDictionary>
     </Application.Resources>

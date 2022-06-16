@@ -89,12 +89,12 @@
                                             <ColumnDefinition Width="4*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox Color="{StaticResource Azul}" IsChecked="{Binding Finalizado}" CheckedChanged="CheckedChangeAction"/>
+                                        <CheckBox Color="{StaticResource Azul}" IsChecked="{Binding Finalizado}" CheckedChanged="CheckedChangeAction" />
                                         <StackLayout Grid.Column="1">
                                             <StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer Tapped="BtnVisualizar" CommandParameter="{Binding .}"/>
                                             </StackLayout.GestureRecognizers>
-                                            <Label TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Text="{Binding Nome}" Style="{StaticResource TituloNomeTarefa}"/>
+                                            <Label TextDecorations="{Binding Finalizado, Converter={StaticResource Tachado}}" Text="{Binding Nome}" />
 
                                             <StackLayout Orientation="Horizontal">
                                                 <Ellipse WidthRequest="15" HeightRequest="15" VerticalOptions="Center" Fill="{Binding Prioridade, Converter={StaticResource Prioridade}}"/>

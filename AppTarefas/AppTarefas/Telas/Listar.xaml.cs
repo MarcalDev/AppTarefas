@@ -93,27 +93,21 @@ namespace AppTarefas.Telas
         }
         private async void CheckedChangeAction(object sender, CheckedChangedEventArgs e)
         {
-            // Pegar a tarefa
             var checkbox = (CheckBox)sender;
             var label = checkbox.Parent.FindByName<Label>("LblTarefaDetalhe");
-            if(label != null)
+            if (label != null)
             {
                 var tapGesture = (TapGestureRecognizer)label.GestureRecognizers[0];
-
-                if(tapGesture != null)
+                if (tapGesture != null)
                 {
                     var tarefa = (Tarefa)tapGesture.CommandParameter;
-
-                    if(tarefa != null)
+                    if (tarefa != null)
                     {
-                        // Salvar a alteração da propriedade finalizada no banco
                         await new TarefaDB().AtualizarAsync(tarefa);
                         Tachado(label, tarefa.Finalizado);
                     }
                 }
-                
-            }          
-           
+            }
         }
 
         private void AbrirCalendario(object sender, EventArgs e)
