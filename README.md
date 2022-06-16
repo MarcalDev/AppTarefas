@@ -24,15 +24,15 @@ Construção de um aplicativo que auxilia na organização de tarefas pessoais, 
 
 ### Cadastro de tarefas
 
-![ListagemTarefas](https://github.com/MarcalDev/AppTarefas/tree/main/ArquivosREADME/CadastroTarefa.jpg)
+![CadastroTarefa](https://github.com/MarcalDev/AppTarefas/tree/main/ArquivosREADME/CadastroTarefa.jpg)
 
 ### Visualização de tarefas
 
-![ListagemTarefas](https://github.com/MarcalDev/AppTarefas/tree/main/ArquivosREADME/DetalhesTarefa.jpg)
+![DetalhesTarefa](https://github.com/MarcalDev/AppTarefas/tree/main/ArquivosREADME/DetalhesTarefa.jpg)
 
 ### Exclusão de tarefas
 
-![ListagemTarefas](https://github.com/MarcalDev/AppTarefas/tree/main/ArquivosREADME/ExclusãoTarefa.jpg)
+![ExclusaoTarefa](https://github.com/MarcalDev/AppTarefas/tree/main/ArquivosREADME/ExclusaoTarefa.jpg)
 
 
 ## 🛠️ Abrir e rodar o projeto
